@@ -1,4 +1,4 @@
-// iphone plus button
+// iphone plus and minus button function
 
 function updateButton(isIncrease){
 
@@ -8,21 +8,26 @@ function updateButton(isIncrease){
 
     const inputIdValueInNumber = parseInt(inputIdValue);
 
+    let newPhoneNumber;
 
     if(isIncrease){
 
-        inputId.value =  inputIdValueInNumber + 1;
+        newPhoneNumber =  inputIdValueInNumber + 1;
 
     }
     else{
         
-        inputId.value =  inputIdValueInNumber - 1;
+        newPhoneNumber =  inputIdValueInNumber - 1;
     }
 
-    const totalIphoneAmount = 1219 * inputIdValueInNumber;
+    inputId.value = newPhoneNumber;
+
+    const totalIphoneAmount = 1219 * newPhoneNumber;
 
     document.getElementById('iphone-price').innerText = totalIphoneAmount;
 }
+
+// iphone plus button
 
  document.getElementById('plus-btn').addEventListener('click',function(){
 
@@ -39,7 +44,7 @@ document.getElementById('minus-btn').addEventListener('click',function(){
 
 //remove iphone
 
-document.getElementById('remove').addEventListener('click',function(e){
+document.getElementById('remove-iphone').addEventListener('click',function(e){
 
    e.target.parentNode.parentNode.parentNode.classList.add('d-none');
 });
