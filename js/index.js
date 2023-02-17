@@ -1,12 +1,32 @@
 // iphone plus button
 
-document.getElementById('plus-btn').addEventListener('click',function(){
+function updateButton(isIncrease){
 
-    const inputIphone = document.getElementById('input-iphone').value;
+    const inputId = document.getElementById('input-iphone');
 
-    const inputIphoneInNumber = parseInt(inputIphone);
+    const inputIdValue = inputId.value;
 
-    document.getElementById('input-iphone').value = inputIphoneInNumber + 1;
+    const inputIdValueInNumber = parseInt(inputIdValue);
+
+
+    if(isIncrease){
+
+        inputId.value =  inputIdValueInNumber + 1;
+
+    }
+    else{
+        
+        inputId.value =  inputIdValueInNumber - 1;
+    }
+
+    const totalIphoneAmount = 1219 * inputIdValueInNumber;
+
+    document.getElementById('iphone-price').innerText = totalIphoneAmount;
+}
+
+ document.getElementById('plus-btn').addEventListener('click',function(){
+
+    updateButton(true);
 
 });
 
@@ -14,11 +34,12 @@ document.getElementById('plus-btn').addEventListener('click',function(){
 
 document.getElementById('minus-btn').addEventListener('click',function(){
 
-    const inputIphone = document.getElementById('input-iphone').value;
+    updateButton(false);
+});
 
-    const inputIphoneInNumber = parseInt(inputIphone);
+//remove iphone
 
-    document.getElementById('input-iphone').value = inputIphoneInNumber - 1;
+document.getElementById('remove').addEventListener('click',function(e){
 
-
+   e.target.parentNode.parentNode.parentNode.classList.add('d-none');
 });
