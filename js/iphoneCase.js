@@ -25,6 +25,12 @@ function updateButtonCase(isIncrease){
     const totalIphoneAmount = 59 * newPhoneNumber;
 
     document.getElementById('iphone-case-price').innerText = totalIphoneAmount;
+
+    subTotal();
+
+    tax();
+
+    total();
 }
 
 // iphone case plus button
@@ -40,6 +46,7 @@ function updateButtonCase(isIncrease){
 document.getElementById('case-minus-btn').addEventListener('click',function(){
 
     updateButtonCase(false);
+    
 });
 
 //remove iphone

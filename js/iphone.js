@@ -25,13 +25,19 @@ function updateButton(isIncrease){
     const totalIphoneAmount = 1219 * newPhoneNumber;
 
     document.getElementById('iphone-price').innerText = totalIphoneAmount;
+
+    subTotal();
+
+    tax();
+
+    total();
 }
 
 // iphone plus button
 
  document.getElementById('plus-btn').addEventListener('click',function(){
 
-    updateButton(true);
+    const amount = updateButton(true);
 
 });
 
@@ -39,7 +45,8 @@ function updateButton(isIncrease){
 
 document.getElementById('minus-btn').addEventListener('click',function(){
 
-    updateButton(false);
+    const amount = updateButton(false);
+
 });
 
 //remove iphone
